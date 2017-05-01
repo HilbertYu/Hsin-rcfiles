@@ -1,0 +1,18 @@
+set arrowstyle=highlight
+hi PreProc        cterm=bold ctermfg=magenta ctermbg=black
+hi Comment        cterm=bold ctermfg=cyan    ctermbg=black
+hi Type           cterm=bold ctermfg=green   ctermbg=black
+hi Statement      cterm=bold ctermfg=blue    ctermbg=black
+hi Normal         cterm=bold ctermfg=white   ctermbg=black
+hi Constant       cterm=bold ctermfg=red     ctermbg=black
+hi StatusLine     cterm=bold ctermfg=white   ctermbg=red
+hi Arrow          cterm=bold ctermfg=white   ctermbg=blue
+hi LineHighlight  cterm=bold ctermfg=white   ctermbg=blue
+hi SelectedLineNr cterm=bold ctermfg=green   ctermbg=blue
+hi IncSearch      cterm=bold ctermfg=white   ctermbg=red
+hi Breakpoint     cterm=bold ctermfg=red     ctermbg=black
+set autosourcereload
+set tabstop=4
+set winsplit=top_big
+set showtgdbcommands
+set wrapscan

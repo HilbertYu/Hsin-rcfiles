@@ -1,0 +1,28 @@
+startup_message off
+altscreen on # erase screen when quit apps
+defc1 off # treat input chars 128 ~ 159 as control functions
+defflow on
+vbell on
+vbell_msg "Ding Ding!"
+defencoding utf8
+bind b encoding big5 utf8
+bind u encoding utf8 utf8
+# # allow bold colors - necessary for some reason
+attrcolor b ".I"
+defbce on # erase background with current bg color
+term "rxvt"
+termcapinfo rxvt 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+
+shelltitle "---"
+
+caption always "%{.KW} %-w%{.mW}[%n] %t%{.KW}%+w %=%{R}Load%{W}: %{G}%l "
+hardstatus alwayslastline "%=%{P}%{KG}@%{Y}%H %{M}%D %{Y}%M %{C}%d%{W}/%{B}%m%{W}/%{R}%Y %{C}%4c:%s %1`"
+
+#bindkey "" prev
+#bindkey "" next
+
+defscrollback 5000
+#screen -t home 0 bash
+screen -t home 0
+select 0

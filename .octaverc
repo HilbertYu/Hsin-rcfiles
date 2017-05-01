@@ -1,0 +1,18 @@
+
+OS = uname.sysname;
+
+#/usr/local/octave/3.8.0/share/octave/3.8.0
+
+#For mac OS
+if (strcmp(OS, "Darwin"))
+    setenv GNUTERM qt;
+    graphics_toolkit('gnuplot');
+end
+
+
+PS1('\[\e[1;35m\]\u\[\e[0m\]\[\e[1;32m\]@\[\e[0m\]\[\e[1;33m\]Octave\[\e[0m\]\[\e[1;37m\][\[\e[0m\]\[\e[1;31m\]\t\[\e[0m\]\[\e[1;37m\]]\[\e[0m\]\[\e[1;37m\][\[\e[0m\]\[\e[1;36m\]\#\[\e[0m\]\[\e[1;37m\]]\[\e[0m\]\[\e[1;37m\][\w]\[\e[0m\]\n\[\e[1;32m\]> \[\e[0m\]');
+
+
+pkg load all;
+
+clear
