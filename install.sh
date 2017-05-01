@@ -17,6 +17,7 @@ FILES=\
 .gitignore_global
 .octaverc
 .screenrc
+.profile
 .tmux.conf"
 
 mkdir -p $BACKUP_DIR
