@@ -93,12 +93,8 @@ esac
 export EDITOR="vim"
 set -o vi
 
-if [ -f ~/.rcfile/.git-completion.bash ]; then
-    . ~/.rcfile/.git-completion.bash
-fi
-
-if [ -f ~/.rcfile/.android ]; then
-    . ~/.rcfile/.android
+if [ -f ~/.hsin-rcfiles/.git-completion.bash ]; then
+    . ~/.hsin-rcfiles/.git-completion.bash
 fi
 ###############################################################################
 # Alias definitions.
@@ -195,17 +191,12 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 ###############################################################################
 export LIBGL_ALWAYS_INDIRECT=1
-export DYLD_LIBRARY_PATH=/Users/fresh/opt/program/libevent/lib
 
-###Script###
-PATH=$PATH:/Users/fresh/HyScripts
 
-###completion###
-if [ -f ~/.hsin-rcfiles/.git-completion.bash ]; then
-    . ~/.hsin-rcfiles/.git-completion.bash
-fi
 
 if [ $OS == "Darwin" ]; then
+
+# mac completion
     complete -cf sudo
     if [ -f $(brew --prefix)/etc/bash_completion ]; then
         . $(brew --prefix)/etc/bash_completion
@@ -216,12 +207,13 @@ if [ $OS == "Darwin" ]; then
     PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
     PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
     PATH="$HOME/perl5/bin${PATH+:}${PATH}"; export PATH;
+
+
+# mac lib path
+    export DYLD_LIBRARY_PATH=$HOME/opt/program/libevent/lib
 fi
 
 
 
-
-# PYTHONPATH="/Users/fresh/anaconda/lib/python2.7/site-packages" #:$PYTHONPATH";
-# export PYTHONPATH;
-#echo $PYTHONPATH
-
+###Script###
+PATH=$PATH:/Users/fresh/HyScripts
