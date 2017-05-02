@@ -25,10 +25,9 @@ alias tmux="tmux -2"
 alias matlabcli="matlab -nodesktop -nosplash -nojvm"
 alias ctags_cpp="ctags -R --c++-kinds=+p --fields=+iaS --extra=+q"
 alias ctags_java="ctags --recurse --langmap=Java:.java --languages=Java --verbose"
+alias grep_c="grep --color ./*.h ./*.c -ni -e"
+alias ag_c="ag -G=\"*.[ch]\" -s "
 
-alias gotest="cd /tmp/;mkdir test;cd /tmp/test"
-
-#alias cscope_c="find ./ -name "*.c" -or -name "*.h" -or -name "*.cpp" -or -name "*.S" | cscope -Rbk"
 alias cscope_c="find ./ -name '*.c' -or -name '*.h' -or -name '*.cpp' -or -name '*.S' | cscope -Rbk"
 
 alias Win7="VBoxHeadless -s win7 -v off &"
