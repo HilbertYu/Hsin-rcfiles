@@ -74,20 +74,20 @@ export PATH=$HOME/anaconda/bin:$PATH
 
 case $OS in
     "Linux")
-        echo "Linux"
-        C_ALL=
-        LANG=
-        LC_CTYPE=zh_TW.utf8
-        LC_COLLATE=C
-        export LC_TIME=C
-        export LANG LC_CTYPE LC_COLLATE
-        linux_logo
-    ;;
-    "Darwin")
-        echo "Mac OS X"
-        export LC_ALL=en_US.UTF-8
-        export LC_COLLATE=C
-        export LC_TIME=C
+#       echo "Linux"
+#       C_ALL=
+#       LANG=
+#       LC_CTYPE=zh_TW.utf8
+#       LC_COLLATE=C
+       export LC_TIME=C
+       export LANG LC_CTYPE LC_COLLATE
+#       linux_logo
+   ;;
+   "Darwin")
+       echo "Mac OS X"
+       export LC_ALL=en_US.UTF-8
+       export LC_COLLATE=C
+       export LC_TIME=C
     ;;
 esac
 export EDITOR="vim"
@@ -183,7 +183,6 @@ prompt="${magenta}↳ ${yellow}$ ${end}"$end
 
 #PS1="$user$at$localhost$time_$command_number$gitbranch$dir$orz\n$prompt"
 PS1="${headline}${magenta}├${end}$dir\n$prompt"
-###########################################################
 
 ###############################################################################
 # For colourful man pages (CLUG-Wiki style)
@@ -200,30 +199,29 @@ export DYLD_LIBRARY_PATH=/Users/fresh/opt/program/libevent/lib
 
 ###Script###
 PATH=$PATH:/Users/fresh/HyScripts
-source ~/.git-completion.bash
-
-###Qt####
-PATH=$PATH:/Users/fresh/opt/Qt5.3.2/5.3/clang_64/bin
-
-
-###OCTAVE bins###
-#PATH=$PATH:/usr/local/octave/3.8.0/bin
-
 
 ###completion###
-complete -cf sudo
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
+if [ -f ~/.hsin-rcfiles/.git-completion.bash ]; then
+    . ~/.hsin-rcfiles/.git-completion.bash
+fi
+
+if [ $OS == "Darwin" ]; then
+    complete -cf sudo
+    if [ -f $(brew --prefix)/etc/bash_completion ]; then
+        . $(brew --prefix)/etc/bash_completion
+    fi
+
+    PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
+    PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
+    PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
+    PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
+    PATH="$HOME/perl5/bin${PATH+:}${PATH}"; export PATH;
 fi
 
 
-PATH="/Users/fresh/perl5/bin${PATH+:}${PATH}"; export PATH;
+
 
 # PYTHONPATH="/Users/fresh/anaconda/lib/python2.7/site-packages" #:$PYTHONPATH";
 # export PYTHONPATH;
 #echo $PYTHONPATH
 
-PERL5LIB="/Users/fresh/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/Users/fresh/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/Users/fresh/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/Users/fresh/perl5"; export PERL_MM_OPT;
