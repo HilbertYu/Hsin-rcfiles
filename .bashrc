@@ -70,7 +70,6 @@ esac
 OS=`uname -s`
 
 export PATH=$HOME/opt/bin:$PATH
-export PATH=$HOME/anaconda/bin:$PATH
 
 case $OS in
     "Linux")
