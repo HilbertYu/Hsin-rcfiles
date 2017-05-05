@@ -69,7 +69,7 @@ esac
 # set env in different OS
 OS=`uname -s`
 
-export PATH=$HOME/opt/bin:$PATH
+export PATH="$HOME/opt/bin:$PATH"
 
 case $OS in
     "Linux")
