@@ -221,4 +221,3 @@ export PATH=$PATH:/Users/fresh/HyScripts
 export PATH="$PATH:/Users/fresh/anaconda/bin"
 
 export PATH="/opt/X11/bin/":$PATH
-export BASH_SILENCE_DEPRECATION_WARNING=1

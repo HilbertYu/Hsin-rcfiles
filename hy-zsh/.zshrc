@@ -184,3 +184,4 @@ export PATH="$PATH:/Users/fresh/anaconda/bin"
 
 export PATH="/opt/X11/bin/":$PATH
 
+export TERM=xterm-256color
