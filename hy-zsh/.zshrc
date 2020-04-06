@@ -3,6 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/fresh/.oh-my-zsh"
+fpath=($ZSH $fpath)
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -73,7 +74,6 @@ ZSH_THEME="hy"
 #fpath=(/usr/local/share/zsh-completions $fpath)
 
 plugins=(
-    git
     zsh-autosuggestions
     sublime
     zsh-completions
@@ -156,15 +156,16 @@ esac
 export EDITOR="vim"
 set -o vi
 
-if [ -f ~/.hsin-rcfiles/.git-completion.bash ]; then
-    . ~/.hsin-rcfiles/.git-completion.bash
-fi
 
 
 # mac completion
     complete -cf sudo
     if [ -f $(brew --prefix)/etc/bash_completion ]; then
         . $(brew --prefix)/etc/bash_completion
+    fi
+
+    if [ -f ~/.git-completion.zsh ]; then
+        . ~/.git-completion.zsh
     fi
 
     PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
