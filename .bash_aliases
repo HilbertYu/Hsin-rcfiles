@@ -31,6 +31,7 @@ alias ag_c="ag -G=\"*.[ch]\" -s "
 alias cscope_c="find ./ -name '*.c' -or -name '*.h' -or -name '*.cpp' -or -name '*.S' | cscope -Rbk"
 
 alias Win7="VBoxHeadless -s win7 -v off &"
+alias df="df -P -H"
 
 OS=`uname -s`
 case $OS in

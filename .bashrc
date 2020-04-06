@@ -209,10 +209,16 @@ if [ $OS == "Darwin" ]; then
 
 
 # mac lib path
-    export DYLD_LIBRARY_PATH=$HOME/opt/program/libevent/lib
+    #export DYLD_LIBRARY_PATH=$HOME/opt/program/libevent/lib
 fi
 
 
 
 ###Script###
-PATH=$PATH:/Users/fresh/HyScripts
+export PATH=$PATH:/Users/fresh/HyScripts
+
+# added by Anaconda2 4.3.1 installer
+export PATH="$PATH:/Users/fresh/anaconda/bin"
+
+export PATH="/opt/X11/bin/":$PATH
+export BASH_SILENCE_DEPRECATION_WARNING=1
