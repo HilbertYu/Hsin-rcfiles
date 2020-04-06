@@ -75,10 +75,12 @@ ZSH_THEME="hy"
 plugins=(
     git
     zsh-autosuggestions
-#    zsh-completions
+    sublime
+    zsh-completions
+    zsh-syntax-highlighting
 )
 
-#autoload -U compinit && compinit
+autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
 
@@ -109,10 +111,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-if [ -n "$LS_COLORS" ]; then
-    zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-fi
-
 source ~/.zsh_aliases
 
 ###############################################################################
@@ -131,6 +129,11 @@ export LIBGL_ALWAYS_INDIRECT=1
 OS=`uname -s`
 
 export PATH="$HOME/opt/bin:$PATH"
+
+test -r ~/.dir_colors && eval "$(dircolors -b ~/.dir_colors)" || eval "$(dircolors -b)"
+if [ -n "$LS_COLORS" ]; then
+    zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+fi
 
 case $OS in
     "Linux")
@@ -184,4 +187,5 @@ export PATH="$PATH:/Users/fresh/anaconda/bin"
 
 export PATH="/opt/X11/bin/":$PATH
 
-export TERM=xterm-256color
+export PATH="/usr/local/sbin:$PATH"
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7f8c8d,bold"
